@@ -14,9 +14,6 @@ class Chunk(object):
 		self.crc = None
 		self.crc_pass = None
 
-	def parse_ihdr(self, file):
-		pass
-
 	def parse(self, file):
 		self.length = parse_length(file, 4)
 		self.name = file.read(4)
@@ -29,7 +26,7 @@ class Chunk(object):
 		file.seek(- (4 + self.length), 1)
 		name_data = file.read(4 + self.length)
 		calculate_crc = zlib.crc32(name_data)
-		self.crc = file.read(4)
+		self.crc = parse_length(file, 4)
 		self.crc_pass = self.crc == calculate_crc
 
 	def print_chunk(self):
