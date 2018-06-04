@@ -18,8 +18,8 @@ class Chunk(object):
 
     def parse(self, filename):
         self.length = parse_length(filename, 4)
-        self.name = filename.read(4)
-        if self.name == b'IHDR':
+        self.name = str(filename.read(4), encoding='utf-8')
+        if self.name == 'IHDR':
             ihdr = IHDR()
             ihdr.parse(filename)
             self.data = ihdr
@@ -34,9 +34,9 @@ class Chunk(object):
     def print_chunk(self):
         print('name : ', self.name)
         print('length : ', self.length)
-        if self.name == b'IHDR':
+        if self.name == 'IHDR':
             self.data.print_ihdr()
-        if self.name == b'tEXt':
+        if self.name == 'tEXt':
             print('data : ', self.data)
         print('crc : ', self.crc_pass)
 

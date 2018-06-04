@@ -15,7 +15,7 @@ if pngMagic == PNG_MAGIC:
         print('-----------------')
         chunk.parse(png)
         chunk.print_chunk()
-        if chunk.name == b'IEND':
+        if chunk.name == 'IEND':
             break
 else:
     print("Python3")
