@@ -41,6 +41,3 @@ class Chunk(object):
         print('crc : ', self.crc_pass)
 
 
-if __name__ == '__main__':
-    x = Chunk(13, 'IEND', '', 123)
-    print(x.name)
