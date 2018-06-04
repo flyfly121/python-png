@@ -38,6 +38,6 @@ class Chunk(object):
             self.data.print_ihdr()
         if self.name == 'tEXt':
             print('data : ', self.data)
-        print('crc : ', self.crc_pass)
+        print('CRC : ', self.crc_pass)
 
 
