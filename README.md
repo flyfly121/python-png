@@ -2,7 +2,7 @@
 
 update: 2018.06.04, parse by python3.
 
-Cookie.png was downloaded from Internet, I do not remember where it is, Sorry! If someone knows, Please do tell me!
+Cookie.png was downloaded from Internet, I do not remember where it comes from, If someone knows, Please do tell me!
 
 Chunk:
 - Length
